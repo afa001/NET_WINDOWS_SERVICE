@@ -28,10 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.stLapso = new System.Timers.Timer();
+            ((System.ComponentModel.ISupportInitialize)(this.stLapso)).BeginInit();
+            // 
+            // stLapso
+            // 
+            this.stLapso.Enabled = true;
+            this.stLapso.Interval = 10000D;
+            this.stLapso.Elapsed += new System.Timers.ElapsedEventHandler(this.stLapso_Elapsed);
+            // 
+            // Archivos
+            // 
             this.ServiceName = "Archivos";
+            ((System.ComponentModel.ISupportInitialize)(this.stLapso)).EndInit();
+
         }
 
         #endregion
+
+        private System.Timers.Timer stLapso;
     }
 }
